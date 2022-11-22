@@ -12,17 +12,19 @@ struct PlayerView: View {
     
     var body: some View {
         ZStack {
-            Image("image-stones")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: UIScreen.main.bounds.width)
-                .ignoresSafeArea(.all)
+            
+            backgroundImageView
+            
+            blureView
             
             VStack(spacing: 32) {
                 closeButton
                 descriptionTitle
+                
                 Spacer()
+                
                 sliderWithTime
+                playBackButtons
             }
             .padding(20)
             
@@ -32,6 +34,15 @@ struct PlayerView: View {
 }
 
 extension PlayerView {
+    //MARK: - Background Image
+    private var backgroundImageView: some View {
+        Image("image-stones")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: UIScreen.main.bounds.width)
+            .ignoresSafeArea(.all)
+    }
+    
     //MARK: - Close Button
     private var closeButton: some View {
         HStack {
@@ -45,6 +56,14 @@ extension PlayerView {
             }
             Spacer()
         }
+    }
+    
+    //MARK: - Blur View
+    private var blureView: some View {
+        Rectangle()
+            .background(.thinMaterial)
+            .opacity(0.2)
+            .ignoresSafeArea(.all)
     }
     
     //MARK: - Munite of relaxing
@@ -70,6 +89,39 @@ extension PlayerView {
             }
             .font(.caption)
             .foregroundColor(.white)
+        }
+    }
+    
+    //MARK: - Play Back Control Button
+    private var playBackButtons: some View {
+        HStack {
+            PlaybackControlButton(systemName: "repeat") {
+                
+            }
+            Spacer()
+            
+            PlaybackControlButton(systemName: "gobackward.10") {
+                
+            }
+            
+            Spacer()
+            
+            PlaybackControlButton(systemName: "play.circle.fill", fontSize: 44) {
+                
+            }
+            
+            Spacer()
+            
+            PlaybackControlButton(systemName: "goforward.10") {
+                
+            }
+            
+            Spacer()
+            
+            PlaybackControlButton(systemName: "stop.fill") {
+                
+            }
+            
         }
     }
 }

@@ -13,6 +13,7 @@
 		AC8E496F292D15D40065255C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8E496E292D15D40065255C /* Preview Assets.xcassets */; };
 		AC9C0769292D1F4000BD0EF0 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C0768292D1F4000BD0EF0 /* MeditationView.swift */; };
 		AC9C076B292D43FD00BD0EF0 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C076A292D43FD00BD0EF0 /* PlayerView.swift */; };
+		AC9C076D292D490F00BD0EF0 /* PlaybackControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C076C292D490F00BD0EF0 /* PlaybackControlButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		AC8E496E292D15D40065255C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC9C0768292D1F4000BD0EF0 /* MeditationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
 		AC9C076A292D43FD00BD0EF0 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		AC9C076C292D490F00BD0EF0 /* PlaybackControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				AC8E4969292D15D30065255C /* ContentView.swift */,
 				AC9C0768292D1F4000BD0EF0 /* MeditationView.swift */,
 				AC9C076A292D43FD00BD0EF0 /* PlayerView.swift */,
+				AC9C076C292D490F00BD0EF0 /* PlaybackControlButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC8E496A292D15D30065255C /* ContentView.swift in Sources */,
+				AC9C076D292D490F00BD0EF0 /* PlaybackControlButton.swift in Sources */,
 				AC9C0769292D1F4000BD0EF0 /* MeditationView.swift in Sources */,
 				AC8E4968292D15D30065255C /* MusicMeditationApp.swift in Sources */,
 				AC9C076B292D43FD00BD0EF0 /* PlayerView.swift in Sources */,

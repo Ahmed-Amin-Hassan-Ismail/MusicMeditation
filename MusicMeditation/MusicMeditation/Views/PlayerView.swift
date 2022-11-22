@@ -31,6 +31,9 @@ struct PlayerView: View {
             .padding(20)
             
         }
+        .onAppear {
+            AudioManager.shared.startPlayer(trackName: "MeditationTrack", withExtension: "wav")
+        }
        
     }
 }

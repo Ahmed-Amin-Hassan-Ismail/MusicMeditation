@@ -16,6 +16,8 @@
 		AC9C0770292D4D7900BD0EF0 /* MidetationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C076F292D4D7900BD0EF0 /* MidetationModel.swift */; };
 		AC9C0773292D4E4600BD0EF0 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C0772292D4E4600BD0EF0 /* MeditationViewModel.swift */; };
 		AC9C0776292D4FE500BD0EF0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C0775292D4FE500BD0EF0 /* Extensions.swift */; };
+		AC9C0779292D569200BD0EF0 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C0778292D569200BD0EF0 /* AudioManager.swift */; };
+		AC9C077D292D5D2400BD0EF0 /* MeditationTrack.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC9C077C292D5D2400BD0EF0 /* MeditationTrack.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		AC9C076F292D4D7900BD0EF0 /* MidetationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidetationModel.swift; sourceTree = "<group>"; };
 		AC9C0772292D4E4600BD0EF0 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
 		AC9C0775292D4FE500BD0EF0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AC9C0778292D569200BD0EF0 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		AC9C077C292D5D2400BD0EF0 /* MeditationTrack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MeditationTrack.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +66,13 @@
 			isa = PBXGroup;
 			children = (
 				AC8E4967292D15D30065255C /* MusicMeditationApp.swift */,
+				AC9C0777292D568800BD0EF0 /* Core */,
 				AC9C0774292D4FDA00BD0EF0 /* Extension */,
 				AC9C076E292D4D6200BD0EF0 /* Model */,
 				AC9C0771292D4E3000BD0EF0 /* ViewModel */,
 				AC9C0767292D1F2800BD0EF0 /* Views */,
 				AC8E496B292D15D40065255C /* Assets.xcassets */,
+				AC9C077C292D5D2400BD0EF0 /* MeditationTrack.wav */,
 				AC8E496D292D15D40065255C /* Preview Content */,
 			);
 			path = MusicMeditation;
@@ -112,6 +118,14 @@
 				AC9C0775292D4FE500BD0EF0 /* Extensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		AC9C0777292D568800BD0EF0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AC9C0778292D569200BD0EF0 /* AudioManager.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC8E496F292D15D40065255C /* Preview Assets.xcassets in Resources */,
+				AC9C077D292D5D2400BD0EF0 /* MeditationTrack.wav in Resources */,
 				AC8E496C292D15D40065255C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +201,7 @@
 			files = (
 				AC9C0770292D4D7900BD0EF0 /* MidetationModel.swift in Sources */,
 				AC9C076D292D490F00BD0EF0 /* PlaybackControlButton.swift in Sources */,
+				AC9C0779292D569200BD0EF0 /* AudioManager.swift in Sources */,
 				AC9C0776292D4FE500BD0EF0 /* Extensions.swift in Sources */,
 				AC9C0773292D4E4600BD0EF0 /* MeditationViewModel.swift in Sources */,
 				AC9C0769292D1F4000BD0EF0 /* MeditationView.swift in Sources */,

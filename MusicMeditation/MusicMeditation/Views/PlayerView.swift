@@ -34,7 +34,7 @@ struct PlayerView: View {
                 
                 Spacer()
                 
-                if let player = audioManager.player {
+                if let _ = audioManager.player {
                     sliderWithTime
                     playBackButtons
                 }
@@ -67,6 +67,7 @@ extension PlayerView {
     private var closeButton: some View {
         HStack {
             Button {
+                audioManager.stop()
                 dismiss()
             } label: {
                 Image(systemName: "xmark.circle.fill")
@@ -123,31 +124,33 @@ extension PlayerView {
     //MARK: - Play Back Control Button
     private var playBackButtons: some View {
         HStack {
-            PlaybackControlButton(systemName: "repeat") {
-                
+            let color: Color = audioManager.isLooping ? .teal : .white
+            PlaybackControlButton(systemName: "repeat", color: color) {
+                audioManager.toggleLoop()
             }
             Spacer()
             
             PlaybackControlButton(systemName: "gobackward.10") {
-                
+                audioManager.backwardTenSeconds()
             }
             
             Spacer()
             
-            PlaybackControlButton(systemName: "play.circle.fill", fontSize: 44) {
-                
+            PlaybackControlButton(systemName: audioManager.isPlayer ? "pause.circle.fill" :  "play.circle.fill", fontSize: 44) {
+                audioManager.playPause()
             }
             
             Spacer()
             
             PlaybackControlButton(systemName: "goforward.10") {
-                
+                audioManager.forwardTenSeconds()
             }
             
             Spacer()
             
             PlaybackControlButton(systemName: "stop.fill") {
-                
+                audioManager.stop()
+                dismiss()
             }
             
         }

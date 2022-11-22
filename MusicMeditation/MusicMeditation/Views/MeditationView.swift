@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct MeditationView: View {
+    @StateObject var meditationViewModel = MeditationViewModel(meditation: Meditation.data)
     @State private var showPlayer: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
-            Image("image-stones")
+            Image(meditationViewModel.meditation.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: UIScreen.main.bounds.height / 3)
@@ -26,13 +27,13 @@ struct MeditationView: View {
                             Text("Music")
                             
                         
-                            Text("0S")
+                        Text(DateComponentsFormatter.abbreviated.string(from: meditationViewModel.meditation.duration) ?? "")
                     }
                     .font(.subheadline)
                     .textCase(.uppercase)
                     .opacity(0.7)
                     
-                    Text("1 Munite Relaxing Maditation")
+                    Text(meditationViewModel.meditation.title)
                         .font(.title)
                     
                     Button {
@@ -48,7 +49,7 @@ struct MeditationView: View {
                     }
 
                     
-                    Text("Clear your mind and slumber into nothingness. Allocate only a few moments for a quick better")
+                    Text(meditationViewModel.meditation.description)
                       
                     Spacer()
                 }
@@ -62,13 +63,14 @@ struct MeditationView: View {
         }
         .ignoresSafeArea(.all)
         .fullScreenCover(isPresented: $showPlayer) {
-            PlayerView()
+            PlayerView(meditationViewModel: meditationViewModel)
         }
     }
 }
 
 struct MeditationView_Previews: PreviewProvider {
+    static let meditationViewModel = MeditationViewModel(meditation: Meditation.data)
     static var previews: some View {
-        MeditationView()
+        MeditationView(meditationViewModel: meditationViewModel)
     }
 }

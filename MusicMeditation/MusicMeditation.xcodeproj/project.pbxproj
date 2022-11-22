@@ -8,23 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		AC8E4968292D15D30065255C /* MusicMeditationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8E4967292D15D30065255C /* MusicMeditationApp.swift */; };
-		AC8E496A292D15D30065255C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8E4969292D15D30065255C /* ContentView.swift */; };
 		AC8E496C292D15D40065255C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8E496B292D15D40065255C /* Assets.xcassets */; };
 		AC8E496F292D15D40065255C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8E496E292D15D40065255C /* Preview Assets.xcassets */; };
 		AC9C0769292D1F4000BD0EF0 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C0768292D1F4000BD0EF0 /* MeditationView.swift */; };
 		AC9C076B292D43FD00BD0EF0 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C076A292D43FD00BD0EF0 /* PlayerView.swift */; };
 		AC9C076D292D490F00BD0EF0 /* PlaybackControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C076C292D490F00BD0EF0 /* PlaybackControlButton.swift */; };
+		AC9C0770292D4D7900BD0EF0 /* MidetationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C076F292D4D7900BD0EF0 /* MidetationModel.swift */; };
+		AC9C0773292D4E4600BD0EF0 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C0772292D4E4600BD0EF0 /* MeditationViewModel.swift */; };
+		AC9C0776292D4FE500BD0EF0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C0775292D4FE500BD0EF0 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AC8E4964292D15D30065255C /* MusicMeditation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMeditation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8E4967292D15D30065255C /* MusicMeditationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMeditationApp.swift; sourceTree = "<group>"; };
-		AC8E4969292D15D30065255C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC8E496B292D15D40065255C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC8E496E292D15D40065255C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC9C0768292D1F4000BD0EF0 /* MeditationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
 		AC9C076A292D43FD00BD0EF0 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		AC9C076C292D490F00BD0EF0 /* PlaybackControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlButton.swift; sourceTree = "<group>"; };
+		AC9C076F292D4D7900BD0EF0 /* MidetationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidetationModel.swift; sourceTree = "<group>"; };
+		AC9C0772292D4E4600BD0EF0 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
+		AC9C0775292D4FE500BD0EF0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				AC8E4967292D15D30065255C /* MusicMeditationApp.swift */,
+				AC9C0774292D4FDA00BD0EF0 /* Extension */,
+				AC9C076E292D4D6200BD0EF0 /* Model */,
+				AC9C0771292D4E3000BD0EF0 /* ViewModel */,
 				AC9C0767292D1F2800BD0EF0 /* Views */,
 				AC8E496B292D15D40065255C /* Assets.xcassets */,
 				AC8E496D292D15D40065255C /* Preview Content */,
@@ -76,12 +83,35 @@
 		AC9C0767292D1F2800BD0EF0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AC8E4969292D15D30065255C /* ContentView.swift */,
 				AC9C0768292D1F4000BD0EF0 /* MeditationView.swift */,
 				AC9C076A292D43FD00BD0EF0 /* PlayerView.swift */,
 				AC9C076C292D490F00BD0EF0 /* PlaybackControlButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AC9C076E292D4D6200BD0EF0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC9C076F292D4D7900BD0EF0 /* MidetationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC9C0771292D4E3000BD0EF0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC9C0772292D4E4600BD0EF0 /* MeditationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC9C0774292D4FDA00BD0EF0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AC9C0775292D4FE500BD0EF0 /* Extensions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,8 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC8E496A292D15D30065255C /* ContentView.swift in Sources */,
+				AC9C0770292D4D7900BD0EF0 /* MidetationModel.swift in Sources */,
 				AC9C076D292D490F00BD0EF0 /* PlaybackControlButton.swift in Sources */,
+				AC9C0776292D4FE500BD0EF0 /* Extensions.swift in Sources */,
+				AC9C0773292D4E4600BD0EF0 /* MeditationViewModel.swift in Sources */,
 				AC9C0769292D1F4000BD0EF0 /* MeditationView.swift in Sources */,
 				AC8E4968292D15D30065255C /* MusicMeditationApp.swift in Sources */,
 				AC9C076B292D43FD00BD0EF0 /* PlayerView.swift in Sources */,

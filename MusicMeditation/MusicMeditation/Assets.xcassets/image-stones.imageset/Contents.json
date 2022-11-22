@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "bekir-donmez-eofm5R5f9Kw-unsplash.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

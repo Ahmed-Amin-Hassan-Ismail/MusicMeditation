@@ -33,6 +33,7 @@
 		AC9C0775292D4FE500BD0EF0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AC9C0778292D569200BD0EF0 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		AC9C077C292D5D2400BD0EF0 /* MeditationTrack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MeditationTrack.wav; sourceTree = "<group>"; };
+		AC9C077E292D61CC00BD0EF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 		AC8E4966292D15D30065255C /* MusicMeditation */ = {
 			isa = PBXGroup;
 			children = (
+				AC9C077E292D61CC00BD0EF0 /* Info.plist */,
 				AC8E4967292D15D30065255C /* MusicMeditationApp.swift */,
 				AC9C0777292D568800BD0EF0 /* Core */,
 				AC9C0774292D4FDA00BD0EF0 /* Extension */,
@@ -338,6 +340,7 @@
 				DEVELOPMENT_TEAM = M4SYRBQBFW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicMeditation/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Music Meditation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -371,6 +374,7 @@
 				DEVELOPMENT_TEAM = M4SYRBQBFW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicMeditation/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Music Meditation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

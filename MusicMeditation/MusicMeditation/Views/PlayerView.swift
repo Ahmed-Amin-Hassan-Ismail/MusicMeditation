@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PlayerView: View {
     var meditationViewModel: MeditationViewModel
+    var isPreview: Bool = false
+    @EnvironmentObject var audioManager: AudioManager
     @State private var value: Double = 0.0
     @Environment(\.dismiss) var dismiss
     
@@ -32,7 +34,7 @@ struct PlayerView: View {
             
         }
         .onAppear {
-            AudioManager.shared.startPlayer(trackName: "MeditationTrack", withExtension: "wav")
+            audioManager.startPlayer(trackName: "MeditationTrack", withExtension: "wav", isPreview: isPreview)
         }
        
     }
@@ -134,6 +136,7 @@ extension PlayerView {
 struct PlayerView_Previews: PreviewProvider {
     static let meditationViewModel = MeditationViewModel(meditation: Meditation.data)
     static var previews: some View {
-        PlayerView(meditationViewModel: meditationViewModel)
+        PlayerView(meditationViewModel: meditationViewModel, isPreview: true)
+            .environmentObject(AudioManager())
     }
 }

@@ -8,26 +8,30 @@
 import Foundation
 import AVKit
 
-final class AudioManager {
+final class AudioManager: ObservableObject {
     
-    //MARK: - Isnatance
-    static let shared = AudioManager()
+    //MARK: - Variables
+        
     private var player: AVAudioPlayer?
     
-    //MARK: - Init
-    private init() { }
-    
     //MARK: - Methods
-    func startPlayer(trackName: String, withExtension: String) {
+    func startPlayer(trackName: String, withExtension: String, isPreview: Bool = false) {
         guard let url = Bundle.main.url(forResource: trackName, withExtension: withExtension) else {
             print("Resource not found", trackName)
             return
         }
         
         do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
             self.player = try AVAudioPlayer(contentsOf: url)
             
-            self.player?.play()
+            if isPreview {
+                self.player?.prepareToPlay()
+            } else {
+                self.player?.play()
+            }
             
         } catch {
             print("failed to initialize player", error)

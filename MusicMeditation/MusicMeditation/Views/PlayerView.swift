@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct PlayerView: View {
+    //MARK: - Property Wrapper
+    @EnvironmentObject var audioManager: AudioManager
+    @State private var value: TimeInterval = 0.0
+    @State private var isEditingSlider: Bool = false
+    @Environment(\.dismiss) var dismiss
+    
+    //MARK: - Variables
     var meditationViewModel: MeditationViewModel
     var isPreview: Bool = false
-    @EnvironmentObject var audioManager: AudioManager
-    @State private var value: Double = 0.0
-    @Environment(\.dismiss) var dismiss
+    let timer = Timer
+        .publish(every: 0.5, on: .main, in: .common)
+        .autoconnect()
     
     var body: some View {
         ZStack {
@@ -27,8 +34,10 @@ struct PlayerView: View {
                 
                 Spacer()
                 
-                sliderWithTime
-                playBackButtons
+                if let player = audioManager.player {
+                    sliderWithTime
+                    playBackButtons
+                }
             }
             .padding(20)
             
@@ -36,7 +45,11 @@ struct PlayerView: View {
         .onAppear {
             audioManager.startPlayer(trackName: "MeditationTrack", withExtension: "wav", isPreview: isPreview)
         }
-       
+        .onReceive(timer) { _ in
+            guard let player = audioManager.player, !isEditingSlider else { return }
+            value = player.currentTime
+        }
+        
     }
 }
 
@@ -81,18 +94,26 @@ extension PlayerView {
         
     }
     
-    //MARK: -
+    //MARK: - sliderWithTime
     private var sliderWithTime: some View {
         VStack(spacing: 5) {
-            Slider(value: $value, in: 0...60)
-                .accentColor(.white)
+            Slider(value: $value,
+                   in: 0...audioManager.player!.duration,
+                   onEditingChanged: { editing in
+                isEditingSlider = editing
+                
+                if !editing {
+                    audioManager.player!.currentTime = value
+                }
+            })
+            .accentColor(.white)
             
             HStack {
-                Text("0:00")
+                Text(DateComponentsFormatter.positional.string(from: audioManager.player!.currentTime) ?? "0:00")
                 
                 Spacer()
                 
-                Text("1:00")
+                Text(DateComponentsFormatter.positional.string(from: audioManager.player!.duration - audioManager.player!.currentTime) ?? "0:00")
             }
             .font(.caption)
             .foregroundColor(.white)

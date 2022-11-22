@@ -11,8 +11,7 @@ import AVKit
 final class AudioManager: ObservableObject {
     
     //MARK: - Variables
-        
-    private var player: AVAudioPlayer?
+    @Published var player: AVAudioPlayer?
     
     //MARK: - Methods
     func startPlayer(trackName: String, withExtension: String, isPreview: Bool = false) {
